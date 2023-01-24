@@ -1,0 +1,96 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0px;
+    margin-top: 100px;
+}
+
+section {
+    margin: 25px;
+    margin-bottom: 50px;
+}
+
+
+nav {
+    position: fixed;
+    background-color: brown;
+    padding: 5px;
+    width: 100%;
+    top:0px;
+}
+
+nav ul {
+    padding: 0px 10px 0px 10px;
+}
+
+nav ul li {
+    color: white;
+    display: inline-block;
+    background-color: brown;
+    padding: 10px;
+    border-right: 2px solid rgb(92, 10, 10);
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background-color: rgb(129, 24, 24);
+    
+}
+
+.green p, td.green {
+    color: rgb(47, 167, 47);
+}
+
+.red p, td.red {
+    color: red;
+    
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w50 {
+    width: 50px;
+}
+
+.w500 {
+    width: 700px;
+}
+
+td.w50{
+    text-align: left;
+}
+
+table, td {
+    border:1px solid black;
+}
+
+td {
+    height: 30px;
+    padding: 0px 10px;
+}
+
+/* table tr:nth-child(even) {
+    background-color: rgb(209, 209, 209);
+} */
+
+table {
+ width: 800px;
+}
+
+
+p:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: antiquewhite;
+    cursor: pointer;  
+}

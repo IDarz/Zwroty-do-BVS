@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zwroty do BVS</title>
+
+
+    <script>
+
+
+        function myFunction() {
+            let asd = event.target;
+            asd = asd.innerText;
+            console.log(asd)
+            navigator.clipboard.writeText(asd);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <nav>
+        <ul class="nav_bar">
+            <a href="#fleet_change_id">
+                <li>Zmiana Floty BVS</li>
+            </a>
+            <a href="#fleet_change_id">
+                <li>Zmiana Floty eFile</li>
+            </a>
+            <a href="#fleet_change_id">
+                <li>Zmiana Floty eFILe 2</li>
+            </a>
+            <a href="#id4">
+                <li>Zmiana Floty eFILe 4</li>
+            </a>
+            <a href="#nowa_polisa">
+                <li>Nowa Polisa</li>
+            </a>
+            <a href="#aneksy">
+                <li>Aneksy</li>
+            </a>
+            <a href="#storna">
+                <li>Storna</li>
+            </a>
+            <a href="#platnosci">
+                <li>PŁatności</li>
+            </a>
+
+
+
+            <!-- refundacja
+            szkody
+            reaktywacja
+            potwierdzenia
+            fv
+            inne -->
+
+            <a href="#oferty_id">
+                <li>Oferty</li>
+            </a>
+
+            <a href="#wypowiedzenie_id">
+                <li>Wypowiedzenia</li>
+            </a>
+            <a href="#cargo_id">
+                <li>Cargo</li>
+            </a>
+            <a href="#certyfikaty_id">
+                <li>Certyfikaty</li>
+            </a>
+            <a href="#">
+                <li></li>
+            </a>
+            <a href="#">
+                <li></li>
+            </a>
+            <a href="#">
+                <li></li>
+            </a>
+        </ul>
+    </nav>
+
+    <section class="fleet_change" id="fleet_change_id">
+        <h1>ZMIANA TABORU BVS (opis zmiany w systemie)</h1>
+
+        <table>
+            <tr onclick="myFunction()">
+                <td class="green w50">+</td>
+                <td class="green">Fahrzeug Einschluss / Dodanie pojazdu</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="green w50">+</td>
+                <td class="green">Fahrzeug Einschlüsse / Dodanie pojazdów</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="red w50">+</td>
+                <td class="red">Fahrzeug Ausschluss / Usuniecie pojazdu</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="red w50">+</td>
+                <td class="red">Fahrzeug Ausschlüsse / Usuniecie pojazdów</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="red w50">+</td>
+                <td class="red">Flottenausschluss ohne Nachweis/ Usunięcie pojazdów bez dok.</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class=" w50">+/-</td>
+                <td class="">Fahrzeug Ein-/Ausschluss / Wymiana</td>
+            </tr>
+        </table>
+
+
+    </section>
+
+
+    <section>
+        <h1>ZMIANA TABORU (e-file: archiwizacja dokumentów wysłanych do klienta)</h1>
+        <h3>Schlagworte: <span>Versicherungsscheine/Rechnungen</span></h3>
+
+        <table>
+            <tr onclick="myFunction()">
+                <td class="w100">CMR (12)</td>
+                <td class="w50 green">+</td>
+                <td class="w500 green">Einschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="w100">CMR (12)</td>
+                <td class="w50 red">-</td>
+                <td class="w500 red">Ausschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="w100">CMR (12)</td>
+                <td class="w50">+/-</td>
+                <td class="w500">Ein-bzw. Ausschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr onclick="myFunction()">
+                <td class="w100">FV (32)</td>
+                <td class="w50 green">+</td>
+                <td class="w500 green">Einschluss - Nachtrag, AVB, Rechnung an Kunden versenden</td>
+            </tr>
+            <tr onclick="myFunction()">
+                <td class="w100">FV (32)</td>
+                <td class="w50 red">+/-</td>
+                <td class="w500">Ein-bzw. Ausschluss - Nachtrag, AVB, Rechnung an Kunden versenden</td>
+            </tr>
+        </table>
+
+
+    </section>
+
+
+    <section>
+        <h1>ZMIANA TABORU (e-file: archiwizacja korespondencji z klientem)</h1>
+        <h3>Schlagworte: Vertragsschriftwechsel</h3>
+        <table>
+            <tr>
+                <td class="w100">CMR (12)</td>
+                <td class="w50 green">+</td>
+                <td class="w500green">Anfrage Flotteneinschluss</td>
+            </tr>
+            <tr>
+                <td class="w100">CMR (12)</td>
+                <td class="w50 red">-</td>
+                <td class="w500 red">Anfrage Flottenausschluss</td>
+            </tr>
+            <tr>
+                <td class="w100">CMR (12)</td>
+                <td class="w50">+/-</td>
+                <td class="w500">Anfrage Flottenein- und Ausschluss</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="id4">
+        <h1>ZMIANA TABORU (BVS: opis pojazdów)</h1>
+        <p>(transporter=Lieferwagen)</p>
+        <p>(sam. ciezarowy do 4t=LKW)</p>
+        <p>(samochod ciezarowy = LKW)</p>
+        <p>(naczepa = AF)</p>
+        <p>(przyczepa = AH)</p>
+        <p>(naczepa-chlodnia = Kühl-AF)</p>
+        <p>(naczepa-plandeka = Plane-AF)</p>
+        <p>(autotransporter = AH)</p>
+
+    </section>
+
+
+    <section id="nowa_polisa">
+        <h1>NOWA POLISA</h1>
+        <h3>Schlagworte: Versicherungsscheine/Rechnungen </h3>
+        <p>CMR Neue polizze an kunden versenden</p>
+        <p>C5 Neue polizze an kunden versenden</p>
+        <p>FV Neue polizze an kunden versenden</p>
+    </section>
+
+
+    <section id="aneksy">
+        <h1>ANEKSY</h1>
+        <h3>Schlagworte: AVB/Bedingungen</h3>
+        <p>CMR: Nachtrag an kunden versenden</p>
+        <p>Nachtrag: Zahlungsänderung an VN</p>
+        <p>CMR: Nachtrag Prämienänderung an VN</p>
+        <p>Nachtrag: Prämienänderung und Zahlungsänderung</p>
+        <p>Nachtrag: Mindestprämie Änderung / Korrektur</p>
+        <p>Nachtrag: Adressänderung</p>
+        <p>Nachtrag: Firmennamens anderung</p>
+        <p>Nachtrag: Selbstbehalt anderung</p>
+        <p>Nachtrag: max. Transport anderung</p>
+    </section>
+
+
+
+    <section id="storna">
+
+        <h1>STRONA</h1>
+        <h3>Schlagworte: AVB/Bedingungen</h3>
+        <table>
+            <tr>
+                <td colspan="2">Storno: Nachtrag, Rechnung an kunden versenden</td>
+            </tr>
+            <tr>
+                <td colspan="2">Storno: Korrespondenz</td>
+            </tr>
+            <tr>
+                <td colspan="2">Storno: interne korrespondenz</td>
+            </tr>
+            <tr>
+                <td colspan="2">Storno: Korrespondenz mit kunde</td>
+            </tr>
+
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>Einvernehmlicher Auflösung des Versicherungsvertrages</td>
+                <td>Porozumienie stron</td>
+            </tr>
+            <tr>
+                <td>Wegfalls des Versicherungsinteresses</td>
+                <td>Utrata interesu</td>
+            </tr>
+            <tr>
+                <td>Anhaltender Nichtbezahlung der Prämie</td>
+                <td>Uporczywe niepłacenie</td>
+            </tr>
+            <tr>
+                <td>QM/Anhaltender Zahlungsverzug</td>
+                <td>QM / Zaległości</td>
+            </tr>
+            <tr>
+                <td>Kündigung durch den Versicherungsnehmer</td>
+                <td>Wypowiedzenie przez ubezpieczającego</td>
+            </tr>
+        </table>
+
+    </section>
+
+
+    <section id="platnosci">
+        <h1>PŁATNOŚCI</h1>
+        <h3>Schlagworte: Buchhaltung</h3>
+        <table>
+            <tr>
+                <td>Einzahlungsbeleg vom VN</td>
+                <td>POTW. WPŁATY</td>
+            </tr>
+            <tr>
+                <td>Rechnungskopie an VN</td>
+                <td>RACHUNEK</td>
+            </tr>
+            <tr>
+                <td>QM an kunden versenden</td>
+                <td>QM</td>
+            </tr>
+            <tr>
+                <td>Aufforderung Rücküberweissung</td>
+                <td>PROBA O ZWROT NADPŁATY</td>
+            </tr>
+            <tr>
+                <td>Zahlungsverschiebung</td>
+                <td>PRZESUNIECIE PLATNOŚCI</td>
+            </tr>
+
+            <tr>
+                <td>Zahlungsvereinbarung</td>
+                <td>plan splaty</td>
+            </tr>
+            <tr>
+                <td>Zahlungsvereinbarung Unterschrift vom VN</td>
+                <td>plan splaty podpisany</td>
+            </tr>
+            <tr>
+                <td>Zahlungsvereinbarung korrespondenz</td>
+                <td>korespondnecja dot. planu splaty</td>
+            </tr>
+            <tr>
+                <td>Nachtrag Zahlungsvereinbarung an kunden versenden</td>
+                <td>Aneks plan splaty</td>
+            </tr>
+            <tr>
+                <td>Zahlungs korrespondenz</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bankänderung</td>
+                <td>Zmiana banku</td>
+            </tr>
+
+
+
+
+        </table>
+
+    </section>
+
+    <section id="oferty_id">
+        <h1>CMR (oferty)</h1>
+        <p>CMR: Angebot für 2023 an VN</p>
+        <p>CMR: Angebot für 2023 interne korrespondenz</p>
+        <p>CMR: Angebot für 2023 korrespondenz mit kunde</p>
+        <p>CMR: Nachtrag</p>
+    </section>
+
+
+    <section class="wypowiedzenie" id="wypowiedzenie_id">
+
+        <h1>WYPOWIEDZENIE</h1>
+
+        <p>Kündigung: interne korrespondenz</p>
+        <p>Kündigung: korrespondenz mit kunde</p>
+        <p>Kündigung: 2023 Angebot</p>
+        <p>Kündigung: Telefonnotiz</p>
+
+    </section>
+
+
+    <section class="cargo" id="cargo_id">
+        <h1>CARGO</h1>
+
+        <p>Cargo: Angebot an VN (x)</p>
+        <p>Cargo: interne korrespondenz (x)</p>
+        <p>Cargo: confirmation an VN (x)</p>
+
+    </section>
+
+    <section class="certyfikaty" id="certyfikaty_id">
+        <h1>CERTYFIKATY</h1>
+
+        <p>Automat. Zertifikat mit OP-Kontrolle</p>
+        <p>Kein autom. Zertifikat</p>
+        <p>Korrektur Zertifikat für 2022 an VN</p>
+
+    </section>
+
+    <section id="refundacja">
+        <h1>REFUNDACJA</h1>
+        <p>Prämienrückgewähr</p>
+    </section>
+
+    <section id="szkody">
+        <h1>SZKODY</h1>
+        <p>Schadensgeschichte an VN / Historia szkód</p>
+        <p>Schadenstatistik / Historia szkodowości</p>
+        <p>Schadenstatistik anfrage</p>
+    </section>
+
+    <section id="reaktywacja">
+        <h1>REAKTYWACJA</h1>
+        <p>Reaktivierung des Vertragsstandes am 29.12.2021</p>
+    </section>
+
+
+
+
+
+    <section id="potwierdzenia">
+        <h1>POTWIERDZENIA POLISY</h1>
+        <h3>Schlagworte: Bestätigungen</h3>
+        <p>Versicherungsbestätigung</p>
+        <p>Email VB</p>
+    </section>
+
+    <section id="fv">
+        <h1>ZDOLNOŚĆ FINANSOWA</h1>
+        <p>#Finanzielle Versicherung 1071-2009</p>
+
+        <p>1 poj. ponad 3,5t DMC / Suma ub. EUR 9.000,--</p>
+        <p>1 Fzg. über 3,5 to hzG / Vers.Summe EUR 9.000,--</p>
+
+        <p>1 poj. do 3,5t DMC / Suma ub. EUR 1.800,--</p>
+        <p>1 Fzg. bis 3,5 to hzG / Vers.Summe EUR 1.800,--</p>
+
+
+        <p>Wymagania finansowe dla firm które posiadają wyłącznie pojazdy do 3,5t DMC to:</p>
+        <p>1 800 EUR na pierwszy pojazd</p>
+        <p>900 EUR na każdy następny pojazd</p>
+    </section>
+
+
+
+
+    <section id="inne">
+        <h1>INNE</h1>
+
+        <p>92 – szkody w excel</p>
+        <p>90 – szkody w bvs</p>
+
+        <p>interne Korrespondenz</p>
+
+        <p>Kundenart/-spezifikation anderung</p>
+
+        <p>02 -> 30 -> Abgabe an Inkassoburo</p>
+
+        <p>VN = Versicherungsnehmer, tzn ubezpieczajacy</p>
+
+        <p>Prolongation Verlängerung bis 2021 CMR & Nachtrag Prämienänderung, Zertifikat, Rechnung, Kabotage an VN</p>
+
+        <p>Schadenstatistik anfrage --></p>
+    </section>
+
+
+
+
+</body>
+
+</html>
