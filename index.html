@@ -15,7 +15,7 @@
         function myFunction() {
             let asd = event.target;
             asd = asd.innerText;
-            // console.log(asd)
+            console.log(asd)
             navigator.clipboard.writeText(asd);
         }
 
@@ -27,98 +27,70 @@
 
     <nav>
         <ul class="nav_bar">
-            <a href="#fleet_change_id">
-                <li>Zmiana Floty BVS</li>
-            </a>
-            <a href="#fleet_change_id">
-                <li>Zmiana Floty eFile</li>
-            </a>
-            <a href="#fleet_change_id">
-                <li>Zmiana Floty eFILe 2</li>
-            </a>
-            <a href="#id4">
-                <li>Zmiana Floty eFILe 4</li>
-            </a>
-            <a href="#nowa_polisa">
-                <li>Nowa Polisa</li>
-            </a>
-            <a href="#aneksy">
-                <li>Aneksy</li>
-            </a>
-            <a href="#storna">
-                <li>Storna</li>
-            </a>
-            <a href="#platnosci">
-                <li>PŁatności</li>
-            </a>
+            <div class="dropdown">
+            <li>
+                Zmiana Floty
+                
+                    
+                <ul id="dropdown_box">
+                    <a href="#fleet_change_bvs"><li>BVS - Zapisanie zmiany</li></a>
+                    <a href="#dodanie_pojazdu"><li>BVS - opis pojazdu</li></a>
+                    <a href="#zmiana_taboru_efile"><li>eFile - Dokumenty dla klienta</li></a>
+                    <a href="#zmiana_floty_korespondencja"><li>eFile - korespondencja z klientem</li></a>
+                </ul>
+                
+                
+            </li>
+        </div>
 
-
-
-            <!-- refundacja
-            szkody
-            reaktywacja
-            potwierdzenia
-            fv
-            inne -->
-
-            <a href="#oferty_id">
-                <li>Oferty</li>
-            </a>
-
-            <a href="#wypowiedzenie_id">
-                <li>Wypowiedzenia</li>
-            </a>
-            <a href="#cargo_id">
-                <li>Cargo</li>
-            </a>
-            <a href="#certyfikaty_id">
-                <li>Certyfikaty</li>
-            </a>
-            <a href="#">
-                <li></li>
-            </a>
-            <a href="#">
-                <li></li>
-            </a>
-            <a href="#">
-                <li></li>
-            </a>
+            <a href="#nowa_polisa"><li>Nowa Polisa</li></a>
+            <a href="#aneksy"><li>Aneksy</li></a>
+            <a href="#storna"><li>Storna</li></a>
+            <a href="#platnosci"><li>Platności</li></a>
+            <a href="#oferty_id"><li>Oferty</li></a>
+            <a href="#wypowiedzenie_id"><li>Wypowiedzenia</li></a>
+            <a href="#cargo_id"><li>Cargo</li></a>
+            <a href="#certyfikaty_id"><li>Certyfikaty</li></a>
+            <a href="#szkody"><li>Szkody</li></a>
+            <a href="#fv"><li>FV</li></a>
+            <a href="#inne"><li>INNE</li></a>
         </ul>
+
+
+        
     </nav>
 
-    <section class="fleet_change" id="fleet_change_id">
-        <h1>ZMIANA TABORU BVS (opis zmiany w systemie)</h1>
+    <div id="top"></div>
+
+    <section class="fleet_change" id="fleet_change_bvs">
+        <h1>ZMIANA TABORU BVS (opis zmiany w BVS)</h1>
 
         <table>
-            <tr onclick="myFunction()">
+            <tr>
                 <td class="green w50">+</td>
-                <td class="green">Fahrzeug Einschluss / Dodanie pojazdu</td>
-            </tr>
-            <tr onclick="myFunction()">
-                <td class="green w50">+</td>
-                <td class="green">Fahrzeug Einschlüsse / Dodanie pojazdów</td>
+                <td class="green" onclick="myFunction()">Fahrzeug Einschluss / Dodanie pojazdu</td>
             </tr>
             <tr>
-                <td colspan="2">&nbsp;</td>
+                <td class="green w50">+</td>
+                <td class="green" onclick="myFunction()">Fahrzeug Einschlüsse / Dodanie pojazdów</td>
             </tr>
-            <tr onclick="myFunction()">
-                <td class="red w50">+</td>
-                <td class="red">Fahrzeug Ausschluss / Usuniecie pojazdu</td>
-            </tr>
-            <tr onclick="myFunction()">
-                <td class="red w50">+</td>
-                <td class="red">Fahrzeug Ausschlüsse / Usuniecie pojazdów</td>
-            </tr>
-            <tr onclick="myFunction()">
-                <td class="red w50">+</td>
-                <td class="red">Flottenausschluss ohne Nachweis/ Usunięcie pojazdów bez dok.</td>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr>
+                <td class="red w50">-</td>
+                <td class="red" onclick="myFunction()">Fahrzeug Ausschluss / Usuniecie pojazdu</td>
             </tr>
             <tr>
-                <td colspan="2">&nbsp;</td>
+                <td class="red w50">-</td>
+                <td class="red" onclick="myFunction()">Fahrzeug Ausschlüsse / Usuniecie pojazdów</td>
             </tr>
-            <tr onclick="myFunction()">
+            <tr>
+                <td class="red w50">-</td>
+                <td class="red" onclick="myFunction()">Flottenausschluss ohne Nachweis/ Usunięcie pojazdów bez dok.</td>
+            </tr>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr>
                 <td class=" w50">+/-</td>
-                <td class="">Fahrzeug Ein-/Ausschluss / Wymiana</td>
+                <td onclick="myFunction()">Fahrzeug Ein-/Ausschluss / Wymiana</td>
             </tr>
         </table>
 
@@ -126,38 +98,38 @@
     </section>
 
 
-    <section>
-        <h1>ZMIANA TABORU (e-file: archiwizacja dokumentów wysłanych do klienta)</h1>
-        <h3>Schlagworte: <span>Versicherungsscheine/Rechnungen</span></h3>
+    <section id="zmiana_taboru_efile">
+        <h1>ZMIANA TABORU eFILE (archiwizacja dokumentów wysłanych do klienta)</h1>
+        <h3>Schlagworte: <span onclick="myFunction()">Versicherungsscheine/Rechnungen</span></h3>
 
         <table>
-            <tr onclick="myFunction()">
-                <td class="w100">CMR (12)</td>
+            <tr>
+                <td class="w100 green">CMR (12)</td>
                 <td class="w50 green">+</td>
-                <td class="w500 green">Einschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
+                <td class="w500 green" onclick="myFunction()">Einschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
             </tr>
-            <tr onclick="myFunction()">
-                <td class="w100">CMR (12)</td>
+            <tr>
+                <td class="w100 red">CMR (12)</td>
                 <td class="w50 red">-</td>
-                <td class="w500 red">Ausschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
+                <td class="w500 red" onclick="myFunction()">Ausschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
             </tr>
-            <tr onclick="myFunction()">
+            <tr>
                 <td class="w100">CMR (12)</td>
                 <td class="w50">+/-</td>
-                <td class="w500">Ein-bzw. Ausschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
-            </tr>
+                <td class="w500" onclick="myFunction()">Ein-bzw. Ausschluss - Rechnung, Zertifikat, Kabotage an Kunden versenden</td>
+        </tr>
         </table>
         <br>
         <table>
-            <tr onclick="myFunction()">
-                <td class="w100">FV (32)</td>
+            <tr>
+                <td class="w100 green">FV (32)</td>
                 <td class="w50 green">+</td>
-                <td class="w500 green">Einschluss - Nachtrag, AVB, Rechnung an Kunden versenden</td>
+                <td class="w500 green" onclick="myFunction()">Einschluss - Nachtrag, AVB, Rechnung an Kunden versenden</td>
             </tr>
-            <tr onclick="myFunction()">
+            <tr>
                 <td class="w100">FV (32)</td>
-                <td class="w50 red">+/-</td>
-                <td class="w500">Ein-bzw. Ausschluss - Nachtrag, AVB, Rechnung an Kunden versenden</td>
+                <td class="w50">+/-</td>
+                <td class="w500" onclick="myFunction()">Ein-bzw. Ausschluss - Nachtrag, AVB, Rechnung an Kunden versenden</td>
             </tr>
         </table>
 
@@ -165,63 +137,76 @@
     </section>
 
 
-    <section>
+    <section id="zmiana_floty_korespondencja">
         <h1>ZMIANA TABORU (e-file: archiwizacja korespondencji z klientem)</h1>
-        <h3>Schlagworte: Vertragsschriftwechsel</h3>
+        <h3>Schlagworte: <span onclick="myFuncion()">Vertragsschriftwechsel</span></h3>
         <table>
             <tr>
-                <td class="w100">CMR (12)</td>
+                <td class="w100 green">CMR (12)</td>
                 <td class="w50 green">+</td>
-                <td class="w500green">Anfrage Flotteneinschluss</td>
+                <td class="w500 green" onclick="myFuncion()">Anfrage Flotteneinschluss</td>
             </tr>
             <tr>
-                <td class="w100">CMR (12)</td>
+                <td class="w100 red">CMR (12)</td>
                 <td class="w50 red">-</td>
-                <td class="w500 red">Anfrage Flottenausschluss</td>
+                <td class="w500 red" onclick="myFuncion()">Anfrage Flottenausschluss</td>
             </tr>
             <tr>
                 <td class="w100">CMR (12)</td>
                 <td class="w50">+/-</td>
-                <td class="w500">Anfrage Flottenein- und Ausschluss</td>
+                <td class="w500" onclick="myFuncion()">Anfrage Flottenein- und Ausschluss</td>
             </tr>
         </table>
     </section>
 
-    <section id="id4">
-        <h1>ZMIANA TABORU (BVS: opis pojazdów)</h1>
-        <p>(transporter=Lieferwagen)</p>
-        <p>(sam. ciezarowy do 4t=LKW)</p>
-        <p>(samochod ciezarowy = LKW)</p>
-        <p>(naczepa = AF)</p>
-        <p>(przyczepa = AH)</p>
-        <p>(naczepa-chlodnia = Kühl-AF)</p>
-        <p>(naczepa-plandeka = Plane-AF)</p>
-        <p>(autotransporter = AH)</p>
+    <section id="dodanie_pojazdu">
+        <h1>Dodanie pojazdu (BVS: opis pojazdu)</h1>
 
+        <table>
+            <tr><td onclick="myFuncion()">(transporter=Lieferwagen)</td></tr>
+            <tr><td onclick="myFuncion()">(sam. ciezarowy do 4t=LKW)</td></tr>
+            <tr><td onclick="myFuncion()">(sam. ciezarowy do 6t=LKW)</td></tr>
+            <tr><td onclick="myFuncion()">(samochod ciezarowy = LKW)</td></tr>
+            <tr><td onclick="myFuncion()">(ciagnik siodlowy = SZM)</td></tr>
+            <tr><td onclick="myFuncion()">(naczepa = AF)</td></tr>
+            <tr><td onclick="myFuncion()">(przyczepa = AH)</td></tr>
+            <tr><td onclick="myFuncion()">(naczepa-chlodnia = Kühl-AF)</td></tr>
+            <tr><td onclick="myFuncion()">(naczepa-plandeka = Plane-AF)</td></tr>
+            <tr><td onclick="myFuncion()">(autotransporter = AH)</td></tr>
+        </table>
     </section>
 
 
     <section id="nowa_polisa">
         <h1>NOWA POLISA</h1>
-        <h3>Schlagworte: Versicherungsscheine/Rechnungen </h3>
-        <p>CMR Neue polizze an kunden versenden</p>
-        <p>C5 Neue polizze an kunden versenden</p>
-        <p>FV Neue polizze an kunden versenden</p>
+        <h3>Schlagworte: <span onclick="myFuncion()">Versicherungsscheine/Rechnungen</span> </h3>
+
+        <table>
+            <tr><td onclick="myFuncion()">CMR Neue polizze an kunden versenden</td></tr>
+            <tr><td onclick="myFuncion()">C5 Neue polizze an kunden versenden</td></tr>
+            <tr><td onclick="myFuncion()">FV Neue polizze an kunden versenden</td></tr>
+        </table>
     </section>
 
 
     <section id="aneksy">
         <h1>ANEKSY</h1>
-        <h3>Schlagworte: AVB/Bedingungen</h3>
-        <p>CMR: Nachtrag an kunden versenden</p>
-        <p>Nachtrag: Zahlungsänderung an VN</p>
-        <p>CMR: Nachtrag Prämienänderung an VN</p>
-        <p>Nachtrag: Prämienänderung und Zahlungsänderung</p>
-        <p>Nachtrag: Mindestprämie Änderung / Korrektur</p>
-        <p>Nachtrag: Adressänderung</p>
-        <p>Nachtrag: Firmennamens anderung</p>
-        <p>Nachtrag: Selbstbehalt anderung</p>
-        <p>Nachtrag: max. Transport anderung</p>
+        <h3>Schlagworte: <span onclick="myfunction()">AVB/Bedingungen</span></h3>
+
+        <table>
+            <tr><td onclick="myFuncion()">CMR: Nachtrag an kunden versenden</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: Zahlungsänderung an VN</td></tr>
+            <tr><td onclick="myFuncion()">CMR: Nachtrag Prämienänderung an VN</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: Prämienänderung und Zahlungsänderung</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: Mindestprämie Änderung / Korrektur</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: Adressänderung</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: Firmennamens anderung</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: Selbstbehalt anderung</td></tr>
+            <tr><td onclick="myFuncion()">Nachtrag: max. Transport anderung</td></tr>
+
+        </table>
+
+
     </section>
 
 
@@ -229,43 +214,41 @@
     <section id="storna">
 
         <h1>STRONA</h1>
-        <h3>Schlagworte: AVB/Bedingungen</h3>
+        <h3>Schlagworte: <span onclick="myFuncion()">AVB/Bedingungen</span></h3>
         <table>
             <tr>
-                <td colspan="2">Storno: Nachtrag, Rechnung an kunden versenden</td>
+                <td colspan="2" onclick="myFuncion()">Storno: Nachtrag, Rechnung an kunden versenden</td>
             </tr>
             <tr>
-                <td colspan="2">Storno: Korrespondenz</td>
+                <td colspan="2" onclick="myFuncion()">Storno: Korrespondenz</td>
             </tr>
             <tr>
-                <td colspan="2">Storno: interne korrespondenz</td>
+                <td colspan="2" onclick="myFuncion()">Storno: interne korrespondenz</td>
             </tr>
             <tr>
-                <td colspan="2">Storno: Korrespondenz mit kunde</td>
-            </tr>
-
-            <tr>
-                <td colspan="2">&nbsp;</td>
+                <td colspan="2" onclick="myFuncion()">Storno: Korrespondenz mit kunde</td>
             </tr>
 
+            <tr><td colspan="2">&nbsp;</td></tr>
+
             <tr>
-                <td>Einvernehmlicher Auflösung des Versicherungsvertrages</td>
+                <td onclick="myFuncion()">Einvernehmlicher Auflösung des Versicherungsvertrages</td>
                 <td>Porozumienie stron</td>
             </tr>
             <tr>
-                <td>Wegfalls des Versicherungsinteresses</td>
+                <td onclick="myFuncion()">Wegfalls des Versicherungsinteresses</td>
                 <td>Utrata interesu</td>
             </tr>
             <tr>
-                <td>Anhaltender Nichtbezahlung der Prämie</td>
+                <td onclick="myFuncion()">Anhaltender Nichtbezahlung der Prämie</td>
                 <td>Uporczywe niepłacenie</td>
             </tr>
             <tr>
-                <td>QM/Anhaltender Zahlungsverzug</td>
+                <td onclick="myFuncion()">QM/Anhaltender Zahlungsverzug</td>
                 <td>QM / Zaległości</td>
             </tr>
             <tr>
-                <td>Kündigung durch den Versicherungsnehmer</td>
+                <td onclick="myFuncion()">Kündigung durch den Versicherungsnehmer</td>
                 <td>Wypowiedzenie przez ubezpieczającego</td>
             </tr>
         </table>
@@ -275,7 +258,7 @@
 
     <section id="platnosci">
         <h1>PŁATNOŚCI</h1>
-        <h3>Schlagworte: Buchhaltung</h3>
+        <h3>Schlagworte: <span onclick="myFuncion()">Buchhaltung</span></h3>
         <table>
             <tr>
                 <td>Einzahlungsbeleg vom VN</td>
@@ -332,10 +315,12 @@
 
     <section id="oferty_id">
         <h1>CMR (oferty)</h1>
-        <p>CMR: Angebot für 2023 an VN</p>
-        <p>CMR: Angebot für 2023 interne korrespondenz</p>
-        <p>CMR: Angebot für 2023 korrespondenz mit kunde</p>
-        <p>CMR: Nachtrag</p>
+        <table>
+            <tr><td onclick="myFuncion()">CMR: Angebot für 2023 an VN</td></tr>
+            <tr><td onclick="myFuncion()">CMR: Angebot für 2023 interne korrespondenz</td></tr>
+            <tr><td onclick="myFuncion()">CMR: Angebot für 2023 korrespondenz mit kunde</td></tr>
+            <tr><td onclick="myFuncion()">CMR: Nachtrag</td></tr>
+        </table>
     </section>
 
 
@@ -343,10 +328,12 @@
 
         <h1>WYPOWIEDZENIE</h1>
 
-        <p>Kündigung: interne korrespondenz</p>
-        <p>Kündigung: korrespondenz mit kunde</p>
-        <p>Kündigung: 2023 Angebot</p>
-        <p>Kündigung: Telefonnotiz</p>
+    <table>
+            <tr><td onclick="myFuncion()">Kündigung: interne korrespondenz</td></tr>
+            <tr><td onclick="myFuncion()">Kündigung: korrespondenz mit kunde</td></tr>
+            <tr><td onclick="myFuncion()">Kündigung: 2023 Angebot</td></tr>
+            <tr><td onclick="myFuncion()">Kündigung: Telefonnotiz</td></tr>
+    </table>
 
     </section>
 
@@ -354,63 +341,50 @@
     <section class="cargo" id="cargo_id">
         <h1>CARGO</h1>
 
-        <p>Cargo: Angebot an VN (x)</p>
-        <p>Cargo: interne korrespondenz (x)</p>
-        <p>Cargo: confirmation an VN (x)</p>
+        <table>
+            <tr><td onclick="myFuncion()">Cargo: Angebot an VN (x)</td></tr>
+            <tr><td onclick="myFuncion()">Cargo: interne korrespondenz (x)</td></tr>
+            <tr><td onclick="myFuncion()">Cargo: confirmation an VN (x)</td></tr>
+        </table>
 
     </section>
 
     <section class="certyfikaty" id="certyfikaty_id">
         <h1>CERTYFIKATY</h1>
 
-        <p>Automat. Zertifikat mit OP-Kontrolle</p>
-        <p>Kein autom. Zertifikat</p>
-        <p>Korrektur Zertifikat für 2022 an VN</p>
+        <table>
+            <tr><td onclick="myFuncion()">Automat. Zertifikat mit OP-Kontrolle</td></tr>
+            <tr><td onclick="myFuncion()">Kein autom. Zertifikat</td></tr>
+            <tr><td onclick="myFuncion()">Korrektur Zertifikat für 2022 an VN</td></tr>
+        </table>
 
     </section>
 
-    <section id="refundacja">
-        <h1>REFUNDACJA</h1>
-        <p>Prämienrückgewähr</p>
-    </section>
 
     <section id="szkody">
         <h1>SZKODY</h1>
-        <p>Schadensgeschichte an VN / Historia szkód</p>
-        <p>Schadenstatistik / Historia szkodowości</p>
-        <p>Schadenstatistik anfrage</p>
+        <table>
+            <tr><td onclick="myFuncion()">Schadensgeschichte an VN / Historia szkód</td></tr>
+            <tr><td onclick="myFuncion()">Schadenstatistik / Historia szkodowości</td></tr>
+            <tr><td onclick="myFuncion()">Schadenstatistik anfrage</td></tr>
+        </table>
     </section>
 
-    <section id="reaktywacja">
-        <h1>REAKTYWACJA</h1>
-        <p>Reaktivierung des Vertragsstandes am 29.12.2021</p>
-    </section>
-
-
-
-
-
-    <section id="potwierdzenia">
-        <h1>POTWIERDZENIA POLISY</h1>
-        <h3>Schlagworte: Bestätigungen</h3>
-        <p>Versicherungsbestätigung</p>
-        <p>Email VB</p>
-    </section>
 
     <section id="fv">
-        <h1>ZDOLNOŚĆ FINANSOWA</h1>
-        <p>#Finanzielle Versicherung 1071-2009</p>
-
-        <p>1 poj. ponad 3,5t DMC / Suma ub. EUR 9.000,--</p>
-        <p>1 Fzg. über 3,5 to hzG / Vers.Summe EUR 9.000,--</p>
-
-        <p>1 poj. do 3,5t DMC / Suma ub. EUR 1.800,--</p>
-        <p>1 Fzg. bis 3,5 to hzG / Vers.Summe EUR 1.800,--</p>
-
-
-        <p>Wymagania finansowe dla firm które posiadają wyłącznie pojazdy do 3,5t DMC to:</p>
-        <p>1 800 EUR na pierwszy pojazd</p>
-        <p>900 EUR na każdy następny pojazd</p>
+        <h1>ZDOLNOŚĆ FINANSOWA (#Finanzielle Versicherung 1071-2009)</h1>
+        <table>
+   
+            <tr><td onclick="myFuncion()">1 poj. ponad 3,5t DMC / Suma ub. EUR 9.000,--</td></tr>
+            <tr><td onclick="myFuncion()">1 Fzg. über 3,5 to hzG / Vers.Summe EUR 9.000,--</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td onclick="myFuncion()">1 poj. do 3,5t DMC / Suma ub. EUR 1.800,--</td></tr>
+            <tr><td onclick="myFuncion()">1 Fzg. bis 3,5 to hzG / Vers.Summe EUR 1.800,--</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td onclick="myFuncion()">Wymagania finansowe dla firm które posiadają wyłącznie pojazdy do 3,5t DMC to:</td></tr>
+            <tr><td onclick="myFuncion()">1 800 EUR na pierwszy pojazd</td></tr>
+            <tr><td onclick="myFuncion()">900 EUR na każdy następny pojazd</td></tr>
+        </table>
     </section>
 
 
@@ -419,23 +393,43 @@
     <section id="inne">
         <h1>INNE</h1>
 
-        <p>92 – szkody w excel</p>
-        <p>90 – szkody w bvs</p>
-
-        <p>interne Korrespondenz</p>
-
-        <p>Kundenart/-spezifikation anderung</p>
-
-        <p>02 -> 30 -> Abgabe an Inkassoburo</p>
-
-        <p>VN = Versicherungsnehmer, tzn ubezpieczajacy</p>
-
-        <p>Prolongation Verlängerung bis 2021 CMR & Nachtrag Prämienänderung, Zertifikat, Rechnung, Kabotage an VN</p>
-
-        <p>Schadenstatistik anfrage --></p>
+        <table>
+            <tr><td onclick="myFuncion()">92 – szkody w excel</td></tr>
+            <tr><td onclick="myFuncion()">90 – szkody w bvs</td></tr>
+    
+            <tr><td onclick="myFuncion()">interne Korrespondenz</td></tr>
+    
+            <tr><td onclick="myFuncion()">Kundenart/-spezifikation anderung</td></tr>
+    
+            <tr><td onclick="myFuncion()">02 -> 30 -> Abgabe an Inkassoburo</td></tr>
+    
+            <tr><td onclick="myFuncion()">VN = Versicherungsnehmer, tzn ubezpieczajacy</td></tr>
+    
+            <tr><td onclick="myFuncion()">Prolongation Verlängerung bis 2021 CMR & Nachtrag Prämienänderung, Zertifikat, Rechnung, Kabotage an VN</td></tr>
+    
+            <tr><td onclick="myFuncion()">Schadenstatistik anfrage --></td></tr>
+        </table>
     </section>
 
+    
+    <section id="reaktywacja">
+        <h1>REAKTYWACJA</h1>
+        <table><tr><td onclick="myFuncion()">Reaktivierung des Vertragsstandes am 29.12.2021</td></tr></table>
+    </section>
 
+    <section id="potwierdzenia">
+        <h1>POTWIERDZENIA POLISY</h1>
+        <h3>Schlagworte: <span onclick="myFuncion()">Bestätigungen</span></h3>
+        <table>
+            <tr><td onclick="myFuncion()">Versicherungsbestätigung</td></tr>
+            <tr><td onclick="myFuncion()">Email VB</td></tr>
+        </table>
+    </section>
+
+    <section id="refundacja">
+        <h1>REFUNDACJA</h1>
+        <table><tr><td onclick="myFuncion()">Prämienrückgewähr</td></tr></table>
+    </section>
 
 
 </body>

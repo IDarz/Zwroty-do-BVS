@@ -4,41 +4,95 @@
 
 body {
     margin: 0px;
-    margin-top: 100px;
 }
 
 section {
-    margin: 25px;
-    margin-bottom: 50px;
+    scroll-margin-top: 130px;
+    box-shadow: 0px 0px 36px -23px rgba(66, 68, 90, 1);
+    padding: 15px;
+    width: 70%;
+    margin: 25px auto 70px auto;
 }
 
 
 nav {
     position: fixed;
-    background-color: brown;
-    padding: 5px;
+    background-color: rgb(53, 48, 48);
     width: 100%;
     top:0px;
+    font-size: large;
+    box-shadow: 0px -10px 19px 16px rgba(66, 68, 90, 1);
+}
+
+
+
+
+h1, h3 {
+    color: rgba(29, 29, 112, 0.829);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+span {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div#top {
+    height: 100px;
 }
 
 nav ul {
-    padding: 0px 10px 0px 10px;
+    margin: 0px;
+    padding: 0px;
 }
 
 nav ul li {
     color: white;
     display: inline-block;
-    background-color: brown;
-    padding: 10px;
-    border-right: 2px solid rgb(92, 10, 10);
+    background-color: rgb(53, 48, 48);
+    padding: 20px 12px;
+    height: 100%;
+}
+
+.dropdown {
+    position: absolute;
+}
+
+.dropdown:hover {
+    background-color: red;
+    height: 200px;
+}
+
+#dropdown_box{
+    position: absolute;
+    display: none;
+    top: 60px;
+    left: 0px;
+    width: 300px;
+}
+
+
+
+.dropdown:hover #dropdown_box {
+    display: block;
+}
+
+#dropdown_box a li {
+    display: block;
 }
 
 a {
     text-decoration: none;
 }
 
+nav ul a {
+    height: 80%;
+}
+
+
+
 nav ul li:hover {
-    background-color: rgb(129, 24, 24);
+    background-color: rgb(29, 27, 27);
     
 }
 
@@ -67,9 +121,9 @@ td.w50{
     text-align: left;
 }
 
-table, td {
+/* table, td {
     border:1px solid black;
-}
+} */
 
 td {
     height: 30px;
@@ -81,16 +135,22 @@ td {
 } */
 
 table {
- width: 800px;
+ width: 900px;
 }
 
 
 p:hover {
-    background-color: antiquewhite;
+    background-color: rgba(211, 211, 211, 0.4);
     cursor: pointer;
+    font-weight: bold;
 }
 
-tr:hover {
-    background-color: antiquewhite;
+tr:hover, span:hover {
+    background-color: rgba(211, 211, 211, 0.4);
     cursor: pointer;  
+    font-weight: bold;
+}
+
+span:hover {
+    padding: 10px;
 }
