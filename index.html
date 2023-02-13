@@ -7,78 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Zwroty do BVS</title>
-
-
-    <script>
-
-        function copyTxt() {
-
-            let el_txt = event.target.innerText;
-            let el_copy = event.target;
-
-            let td_container = document.createElement("td");
-            td_container.innerText = "Copied!";
-
-            el_copy.after(td_container);
-
-            td_container.classList.add("copied");
-
-            setTimeout(function(){
-                td_container.classList.add("copied1");
-            }, 50);
-
-            setTimeout(function(){
-                td_container.classList.add("copied2");
-            }, 1500);
-
-            setTimeout(function(){
-                td_container.remove(); 
-            }, 3000);
-
-            navigator.clipboard.writeText(el_txt);
-
-        }
-
-        function policzSkladkeCustom() {
-            let kwota = document.getElementById('skladka_kwota').value
-            let ilosc = document.getElementById('skladka_ilosc').value
-            let data = document.getElementById('skladka_data').value
-
-            let arr = data.split('-')
-            let val_m = kwota/12*(12-Number(arr[1]))
-            let val_d = kwota/360*(31-Number(arr[2]))
-
-            val_total = (val_m + val_d) * ilosc
-
-            val_day = kwota/360*ilosc
-
-            document.getElementById("result_total").innerHTML = "Razem "+ ilosc + " pojazdy: <b>" + ilosc*kwota + "</b> EUR"
-            document.getElementById("result").innerHTML = "Od " + data + ": <b>" + val_total.toFixed(2) + "</b> EUR"
-            document.getElementById("result_day").innerHTML = "Za 1 dzień: <b>" + val_day.toFixed(2) + "</b> EUR"
-
-        }
-
-        function addDays(date, days) {
-            var result = new Date(date);
-            result.setDate(result.getDate() + days);
-            return result;
-        }
-
-        function policzSkladke(kwota, przesuniecie) {
-
-            data = addDays(new Date, przesuniecie)
-
-            let val_m = kwota/12*(12-(data.getMonth()+1))
-            let val_d = kwota/360*(31-data.getDate())   
-                        
-            return val_total = (val_m + val_d).toFixed(2).replace('.',',').replace(',00','') +' €';
-        }
-
-
-
-    </script>
-
+    <script src="script_top.js"></script>
+    <title>Tools</title>
 </head>
 
 <body>
@@ -95,7 +25,6 @@
                     <a href="#zmiana_floty_korespondencja">eFile - korespondencja z klientem</a>
                 </div>
             </li>
-            
 
             <a href="#nowa_polisa"><li>Nowa Polisa</li></a>
             <a href="#aneksy"><li>Aneksy</li></a>
@@ -113,7 +42,6 @@
         </ul>
 
 
-        
     </nav>
 
     <div id="top"></div>
@@ -156,7 +84,7 @@
 
     <section id="zmiana_taboru_efile">
         <h1>ZMIANA TABORU eFILE (archiwizacja dokumentów wysłanych do klienta)</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">Versicherungsscheine/Rechnungen</span></h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">Versicherungsscheine/Rechnungen</span></h3>
 
         <table>
             <tr>
@@ -195,7 +123,7 @@
 
     <section id="zmiana_floty_korespondencja">
         <h1>ZMIANA TABORU (e-file: archiwizacja korespondencji z klientem)</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">Vertragsschriftwechsel</span></h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">Vertragsschriftwechsel</span></h3>
         <table>
             <tr>
                 <td class="w100 green">CMR (12)</td>
@@ -235,7 +163,7 @@
 
     <section id="nowa_polisa">
         <h1>NOWA POLISA</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">Versicherungsscheine/Rechnungen</span> </h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">Versicherungsscheine/Rechnungen</span> </h3>
 
         <table>
             <tr><td onclick="copyTxt()">CMR Neue polizze an kunden versenden</td></tr>
@@ -247,7 +175,7 @@
 
     <section id="aneksy">
         <h1>ANEKSY</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">AVB/Bedingungen</span></h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">AVB/Bedingungen</span></h3>
 
         <table>
             <tr><td onclick="copyTxt()">CMR: Nachtrag an kunden versenden</td></tr>
@@ -261,16 +189,12 @@
             <tr><td onclick="copyTxt()">Nachtrag: max. Transport anderung</td></tr>
 
         </table>
-
-
     </section>
-
-
 
     <section id="storna">
 
         <h1>STRONA</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">AVB/Bedingungen</span></h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">AVB/Bedingungen</span></h3>
         <table>
             <tr>
                 <td colspan="2" onclick="copyTxt()">Storno: Nachtrag, Rechnung an kunden versenden</td>
@@ -314,7 +238,7 @@
 
     <section id="platnosci">
         <h1>PŁATNOŚCI</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">Buchhaltung</span></h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">Buchhaltung</span></h3>
         <table class="asd">
             <tr>
                 <td>POTW. WPŁATY</td>
@@ -336,7 +260,6 @@
                 <td>PRZESUNIECIE PLATNOŚCI</td>
                 <td onclick="copyTxt()">Zahlungsverschiebung</td>
             </tr>
-
             <tr>
                 <td>plan splaty</td>
                 <td onclick="copyTxt()">Zahlungsvereinbarung</td>
@@ -361,9 +284,6 @@
                 <td>Zmiana banku</td>
                 <td onclick="copyTxt()">Bankänderung</td>
             </tr>
-
-
-
 
         </table>
 
@@ -428,30 +348,54 @@
 
 
     <section id="fv">
+        
         <h1>ZDOLNOŚĆ FINANSOWA (#Finanzielle Versicherung 1071-2009)</h1>
-        <table>
-   
-            <tr><td onclick="copyTxt()">1 poj. ponad 3,5t DMC / Suma ub. EUR 9.000,--</td></tr>
-            <tr><td onclick="copyTxt()">1 Fzg. über 3,5 to hzG / Vers.Summe EUR 9.000,--</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td onclick="copyTxt()">1 poj. do 3,5t DMC / Suma ub. EUR 1.800,--</td></tr>
-            <tr><td onclick="copyTxt()">1 Fzg. bis 3,5 to hzG / Vers.Summe EUR 1.800,--</td></tr>
-            <tr><td>&nbsp;</td></tr>
-            <tr><td onclick="copyTxt()">Wymagania finansowe dla firm które posiadają wyłącznie pojazdy do 3,5t DMC to:</td></tr>
-            <tr><td onclick="copyTxt()">1 800 EUR na pierwszy pojazd</td></tr>
-            <tr><td onclick="copyTxt()">900 EUR na każdy następny pojazd</td></tr>
-        </table>
+        <div class="flex_container">
+            <div>
+                <label for="trucks_l"><div>Duże ponad 3,5 DMC:</div></label>
+                <input type="number" name="fv_suma_gwaran" id="trucks_l" value="1" min="0">
+                <br><br> 
+
+                <label for="trucks_s"><div>Małe do 3,5 DMC:</div></label>
+                <input type="number" name="fv_suma_gwaran" id="trucks_s" value="0" min="0">
+                <br><br>
+    
+                <button onclick="calculateFV_maxTransport()">Oblicz</button>   
+            </div>
+            <div>
+                <div id="fv_l_disp_none">
+                    <p><b>DUŻE:</b></p>
+                    <p class="copyable" id="fv_pl_l" onclick="copyTxt()">1 poj. ponad 3,5t DMC / Suma ub. EUR 9.000,--</p>
+                    <p class="copyable" id="fv_de_l" onclick="copyTxt()">1 Fzg. über 3,5 to hzG / Vers.Summe EUR 9.000,--</p>
+                </div>
+                <div id="fv_s_disp_none">
+                    <p><b>MAŁE:</b></p>
+                    <p class="copyable" id="fv_pl_s" onclick="copyTxt()">1 poj. do 3,5t DMC / Suma ub. EUR 1.800,--</p>
+                    <p class="copyable" id="fv_de_s" onclick="copyTxt()">1 Fzg. bis 3,5 to hzG / Vers.Summe EUR 1.800,--</p>
+                </div>
+                <div id="fv_mix_disp_none">
+                    <p><b>MIX:</b></p>
+                    <p class="copyable" id="fv_pl_mix" onclick="copyTxt()"></p>
+                    <p class="copyable" id="fv_de_mix" onclick="copyTxt()"></p>
+                    <br>
+                </div>
+                <p class="copyable" id="fv_de_s" onclick="copyTxt()">Wymagania finansowe dla firm które posiadają wyłącznie pojazdy do 3,5t DMC to:</p>
+                <p class="copyable" id="fv_de_s" onclick="copyTxt()">1 800 EUR na pierwszy pojazd</p>
+                <p class="copyable" id="fv_de_s" onclick="copyTxt()">900 EUR na każdy następny pojazd</p>
+            </div>
+
+
+        </div>
+    
+
     </section>
-
-
-
 
     <section id="inne">
         <h1>INNE</h1>
 
         <table>
-            <tr><td onclick="copyTxt()">92 – szkody w excel</td></tr>
-            <tr><td onclick="copyTxt()">90 – szkody w bvs</td></tr>
+            <tr><td onclick="copyTxt()">92 szkody w excel</td></tr>
+            <tr><td onclick="copyTxt()">90 szkody w bvs</td></tr>
     
             <tr><td onclick="copyTxt()">interne Korrespondenz</td></tr>
     
@@ -475,7 +419,7 @@
 
     <section id="potwierdzenia">
         <h1>POTWIERDZENIA POLISY</h1>
-        <h3>Schlagworte: <span onclick="copyTxt()">Bestätigungen</span></h3>
+        <h3>Schlagworte: <span class="copyable" onclick="copyTxt()">Bestätigungen</span></h3>
         <table>
             <tr><td onclick="copyTxt()">Versicherungsbestätigung</td></tr>
             <tr><td onclick="copyTxt()">Email VB</td></tr>
@@ -489,6 +433,8 @@
 
     <section id="skladka">
         <h1>Składka</h1>
+
+        <div id="skladka_container">
         <h3>Przykładowe wartości:</h3>
 
         <table id="skladka_tabela">
@@ -551,85 +497,38 @@
         <h3>Własne wartości:</h3>
 
         <div class="elements">
-        <label for="kwota"><div>Kwota: </div></label>
-        <input type="number" name="kwota" id="skladka_kwota" value="660">
-        <br><br>
-        <label for="ilosc"><div>Ilość:</div></label>
-        <input type="number" name="ilosc" id="skladka_ilosc" value="1">
-        <br><br>
-        <label for="dateid"><div>Data:</div></label>
-        <input type="date" name="date" id="skladka_data">
-        <br><br>
-    
-        
-
+            <label for="kwota"><div>Kwota: </div></label>
+            <input type="number" name="kwota" id="skladka_kwota" value="660" step="10">
+            <br><br>
+            <label for="ilosc"><div>Ilość:</div></label>
+            <input type="number" name="ilosc" id="skladka_ilosc" value="1" min="1">
+            <br><br>
+            <label for="dateid"><div>Data:</div></label>
+            <input type="date" name="date" id="skladka_data">
+            <br><br>     
+            <button onclick="policzSkladkeCustom()">Oblicz</button>
         </div>
 
        
         <div class="result_all">
             <div id="result_total"></div>
-            <div id="result"></div>
+            <div id="result_Y"></div>
+            <div id="result_H"></div>
+            <div id="result_Q"></div>
             <div id="result_day"></div>
         </div>
 
         <div style="clear:both"></div>
 
-        <button onclick="policzSkladkeCustom()">Oblicz</button>
-
+        
+        </div>
     </section>
 
 
+<script src="script_bottom.js"></script>
 
-    <script>
 
-        document.onload = setSkladkaDate()
-
-        function setSkladkaDate() {
-
-            let data = new Date
-            
-            let dzien = (data.getDate()+1).toString();
-            dzien.length == 1 ? dzien = '0' + dzien : "";
-            let miesiac = (data.getMonth()+1).toString();
-            miesiac.length == 1 ? miesiac = '0' + miesiac : "";
-
-            data = data.getFullYear().toString() + '-' + miesiac + '-' + dzien;
-
-            document.getElementById("skladka_data").value = data;
-        }
-
-        document.getElementById("skladka_data_1").innerText = 'Od ' + addDays(new Date,1).toLocaleDateString() + ' (Jutro)'
-        document.getElementById("skladka_data_2").innerText = 'Od ' + addDays(new Date,2).toLocaleDateString()
-        document.getElementById("skladka_data_3").innerText = 'Od ' + addDays(new Date,3).toLocaleDateString()
-
-        document.getElementById("skladka_50_1").innerText = policzSkladke(50,1)
-        document.getElementById("skladka_50_2").innerText = policzSkladke(50,2)
-        document.getElementById("skladka_50_3").innerText = policzSkladke(50,3)
-
-        document.getElementById("skladka_440_1").innerText = policzSkladke(440,1)
-        document.getElementById("skladka_440_2").innerText = policzSkladke(440,2)
-        document.getElementById("skladka_440_3").innerText = policzSkladke(440,3)
-
-        document.getElementById("skladka_600_1").innerText = policzSkladke(600,1)
-        document.getElementById("skladka_600_2").innerText = policzSkladke(600,2)
-        document.getElementById("skladka_600_3").innerText = policzSkladke(600,3)
-
-        document.getElementById("skladka_660_1").innerText = policzSkladke(660,1)
-        document.getElementById("skladka_660_2").innerText = policzSkladke(660,2)
-        document.getElementById("skladka_660_3").innerText = policzSkladke(660,3)
-
-        document.getElementById("skladka_860_1").innerText = policzSkladke(860,1)
-        document.getElementById("skladka_860_2").innerText = policzSkladke(860,2)
-        document.getElementById("skladka_860_3").innerText = policzSkladke(860,3)
-
-        document.getElementById("skladka_1320_1").innerText = policzSkladke(1320,1)
-        document.getElementById("skladka_1320_2").innerText = policzSkladke(1320,2)
-        document.getElementById("skladka_1320_3").innerText = policzSkladke(1320,3)
-
-    </script>
 
 </body>
-
-
 
 </html>

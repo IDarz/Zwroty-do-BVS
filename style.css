@@ -9,7 +9,7 @@ body {
 section {
     scroll-margin-top: 130px;
     box-shadow: 0px 0px 36px -23px rgba(66, 68, 90, 1);
-    padding: 15px;
+    padding: 20px 30px;
     width: 70%;
     margin: 25px auto 70px auto;
 }
@@ -19,7 +19,7 @@ nav {
     position: fixed;
     background-color: rgb(53, 48, 48);
     width: 100%;
-
+    z-index: 1;
     font-weight: bold;
     box-shadow: 0px -10px 19px 16px rgba(66, 68, 90, 1);
 
@@ -95,6 +95,7 @@ nav ul li:hover, .dropdown_content a:hover {
 }
 
 .w100 {width: 100px;}
+
 .w50 {
     width: 50px;
     font-weight: bold;
@@ -104,33 +105,91 @@ nav ul li:hover, .dropdown_content a:hover {
 .w500 {width: 700px;}
 /* table {width: 100%;} */
 td, section h3 span {padding: 10px;}
-td{width: fit-content;}
+
+td {
+    width: max-content;
+    position: relative;
+}
 
 
+.copyable {
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
+    position: relative;
+    /* width: max-content; */
+    /* word-break: break-all; */
+    
+}
 
-
-tr:hover, span:hover {
-    background-color: rgba(211, 211, 211, 0.4);
+tr:hover, span:hover, p.copyable:hover {
+    background-color: whitesmoke;
     cursor: pointer;  
+    border-radius: 10px;
+    box-shadow: 20px 20px 34px -22px rgba(66, 68, 90, 0.66);
+
 }
 
 .copied {
-    background-color: white;
-    color: white;
     padding: 10px;
     border-radius: 10px;
+    position: absolute;
+    /* background-color: white; */
+    top: -40px;
+    right: 20px;
+    font-size: medium;
+    font-weight: 400;
+    /* opacity: 0; */
+    color: white;   
+    transition: all 1.5s; 
 }
 
-.copied1 {
-    background-color: #228C22;
+.copied::before {
+    content: ".";
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid transparent; 
+    position: absolute;
+    bottom: -6px;
+    left: 30px;
+    transition: border-top-color 1.5s; 
+}
+
+/* .copied::before{
+    content: ".";
+    width: 10px;
+    height: 10px;
+    background-color: white;
     transition: all 1.5s; 
+    opacity: inherit;
+    color: #228C22;
+    position: absolute;
+    bottom: -5px;
+    left: 30px;
+    transform: rotate(45deg);   
+    z-index: 0;  
+
+} */
+
+
+.copied1 {
+    background-color: #0f740f;    
+}
+.copied1:before {
+    border-top-color: #0f740f;
+    /* background-color: #0f740f;  */
 }
 
 .copied2 {
-    background-color: white;
-    color: white;
-    transition: all 1.5s; 
+    opacity: 0;
 }
+
+
+
+
+
 
 
 input, label {
@@ -174,7 +233,11 @@ div.result_all, div.elements {
 
 #skladka_tabela {
     text-align: right;
-    width: 70%;
+    width: 100%;
+}
+
+div#skladka_container {
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -200,3 +263,32 @@ div.result_all, div.elements {
     margin-left: 30px;
 }
 
+section#fv div.flex_container label div {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+section#fv div.flex_container > div {
+    margin: 15px;
+}
+
+
+
+.fv_mix_display {
+    display: none;
+}
+
+.flex_container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#fv_mix_disp_none, #fv_s_disp_none {
+    display: none;
+}
+
+label {
+    margin: 0px;
+    padding: 0px;
+}
