@@ -2,6 +2,11 @@ function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
+function numberPL(x) {
+    x = x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return x.replace(".", ",")
+}
+
 function copyTxt() {
 
     const el_txt = event.target.innerText;
@@ -40,11 +45,11 @@ function policzSkladkeCustom() {
 
     val_day = kwota/360*ilosc
 
-    document.getElementById("result_total").innerHTML = "Razem "+ ilosc + " pojazdy: <b>" + ilosc*kwota + " EUR </b>"
-    document.getElementById("result_Y").innerHTML = "<b>Rocznie </b>od " + data + ": <b>" + (skladka_Y * ilosc).toFixed(2) + " EUR </b>"
-    document.getElementById("result_H").innerHTML = "<b>Półrocznie </b>od " + data + ": <b>" + (skladka_H * ilosc).toFixed(2) + " EUR </b> (" + kwota/2*ilosc + " EUR)"
-    document.getElementById("result_Q").innerHTML = "<b>Kwartalnie </b>od " + data + ": <b>" + (skladka_Q * ilosc).toFixed(2) + " EUR </b> (" + kwota/4*ilosc + " EUR)"
-    document.getElementById("result_day").innerHTML = "Za 1 dzień: <b>" + val_day.toFixed(2) + " EUR </b>"
+    document.getElementById("result_total").innerHTML = "Razem "+ ilosc + " pojazdy: <b>" + numberPL(ilosc*kwota) + " EUR </b>"
+    document.getElementById("result_Y").innerHTML = "<b>Rocznie </b>od " + data + ": <b>" + numberPL((skladka_Y * ilosc).toFixed(2)) + " EUR </b>"
+    document.getElementById("result_H").innerHTML = "<b>Półrocznie </b>od " + data + ": <b>" + numberPL((skladka_H * ilosc).toFixed(2)) + " EUR </b> (" + numberPL(kwota/2*ilosc) + " EUR)"
+    document.getElementById("result_Q").innerHTML = "<b>Kwartalnie </b>od " + data + ": <b>" + numberPL((skladka_Q * ilosc).toFixed(2)) + " EUR </b> (" + numberPL(kwota/4*ilosc) + " EUR)"
+    document.getElementById("result_day").innerHTML = "Za 1 dzień: <b>" + numberPL(val_day.toFixed(2)) + " EUR </b>"
 
 }
 
